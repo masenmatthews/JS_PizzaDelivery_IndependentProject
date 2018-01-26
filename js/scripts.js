@@ -1,14 +1,14 @@
 // Business logic
-function Pizza(size, meatTopping, vegTopping1, vegTopping2, vegTopping3) {
+function Pizza(size, meatTopping, vegTopping1, vegTopping2, vegTopping3, price) {
   this.size = size;
   this.meatTopping = meatTopping;
   this.vegTopping1 = vegTopping1;
   this.vegTopping2 = vegTopping2;
   this.vegTopping3 = vegTopping3;
-  this.pizzaPrice = pizzaPrice;
-}
+  this.price = [];
+};
 
-Pizza.prototype.Size = function(size) {
+Pizza.prototype.size = function(size) {
   var sizePrice = 0;
   if (this.size === "small") {
     sizePrice = 5;
@@ -78,33 +78,28 @@ Pizza.prototype.vegTopping3 = function(vegTopping3) {
   this.vegTopping3Price = vegTopping3Price;
 };
 
-Pizza.prototype.totalPrice = function(pizzaPrice) {
-  var pizzaPrice = this.sizePrice + this.meatToppingPrice + this.vegTopping1Price + this.vegTopping2Price + this.vegTopping3Price;
+Pizza.prototype.price = function(price) {
+  var totalPrice = this.sizePrice + this.meatToppingPrice + this.vegTopping1Price + this.vegTopping2Price + this.vegTopping3Price;
+  price = this.price.push(totalPrice);
 };
 
 // User interface logic
-
-var pizzaOrder = function() {
-  var size = $("pizza-size").val();
-  var meatTopping = $("#meat-topping").val();
-  var vegTopping1 = $("#veg-topping1").val();
-  var vegTopping2 = $("#veg-topping2").val();
-  var vegTopping3 = $("#veg-topping3").val();
-
-  var pizzaSelection = new Pizza (size, meatTopping, vegTopping1, vegTopping2, vegTopping3)
-  return pizzaSelection;
-};
-
 $(document).ready(function() {
+    var size = $("#pizza-size").val();
+    var meatTopping = $("#meat-topping").val();
+    var vegTopping1 = $("#veg-topping1").val();
+    var vegTopping2 = $("#veg-topping2").val();
+    var vegTopping3 = $("#veg-topping3").val();
 
-  $("button#submit-order").submit(function(event) {
+    var pizzaChoice = new Pizza(size, meatTopping, vegTopping1, vegTopping2, vegTopping3, price);
+
+  $("#submit-order").click(function() {
     event.preventDefault();
-      $("span.size-output").text($("#size").val());
-      $("span.meat-output").text($("#meat-topping").val());
-      $("span.veg1-output").text($("#veg-topping1").val());
-      $("span.veg2-output").text($("#veg-topping2").val());
-      $("span.veg3-output").text($("#veg-topping3").val());
-
-      return
+      $("ul#size-output").text();
+      $("ul#meat-output").text();
+      $("ul#veg1-output").text();
+      $("ul#veg2-output").text();
+      $("ul#veg3-output").text();
+      $("ul#price-output").text();
   });
 });
