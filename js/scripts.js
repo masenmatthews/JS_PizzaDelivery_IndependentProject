@@ -77,24 +77,20 @@ Pizza.prototype.vegTopping3 = function() {
   this.vegTopping3Price = vegTopping3Price;
 };
 
-// Pizza.prototype.totalPrice = function() {
-//   var pizzaPrice = this.sizePrice + this.meatToppingPrice + this.vegTopping1Price + this.vegTopping2Price + this.vegTopping3Price;
-// }
-//   var total = pizzaPrice;
-// }
+Pizza.prototype.totalPrice = function() {
+  var pizzaPrice = this.sizePrice + this.meatToppingPrice + this.vegTopping1Price + this.vegTopping2Price + this.vegTopping3Price;
+}
+  return pizzaPrice;
+}
 
 // User interface logic
 $(document).ready(function() {
+  var order = new Pizza
 
 
-
-  $("button#submit-order").submit(function() {
+  $("button#submit-order").submit(function(event() {
     event.preventDefault();
 
-    $("li#size").text($("#pizza-size").val());
-    $("li#meat").text($("#meat-topping1").val());
-    $("li#veg1").text($("#veg-topping1").val());
-    $("li#veg2").text($("#veg-topping2").val());
-    $("li#veg3").text($("#veg-topping3").val());
+
   });
 });
