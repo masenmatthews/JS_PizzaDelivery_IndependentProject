@@ -17,11 +17,11 @@ _This sample pizza delivery site is designed to replicate a site that one would 
   * Input Example: N/A
   * Output Example: N/A
 
-3. Establish prototype to determine pizza price
-  * Input Example:
-  * Output Example:
+3. Establish prototypes for size, toppings, and price
+  * Input Example: N/A
+  * Output Example: N/A
 
-4. 
+4.
   * Input Example:
   * Output Example:
 
