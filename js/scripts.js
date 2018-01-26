@@ -1,33 +1,40 @@
 // Business logic
-function Pizza(size, meatTopping, vegTopping1, vegTopping2, vegTopping3, price) {
+function Pizza(size, meatTopping, vegTopping1, vegTopping2, vegTopping3) {
   this.size = size;
   this.meatTopping = meatTopping;
   this.vegTopping1 = vegTopping1;
   this.vegTopping2 = vegTopping2;
   this.vegTopping3 = vegTopping3;
-  this.price = [];
+};
+
+Pizza.prototype.Cost(sizeCost) = function() {
+  var price = 0;
+  if (this.size === "small") {
+    price = 5;
+  } else if (this.size === "medium") {
+    price = 6;
+  } else if (this.size === "large") {
+    price = 8;
+  } else if (this.size === "extra-large") {
+    price = 10;
+  }
+
+
+
 };
 
 Pizza.prototype.size = function(size) {
   var sizePrice = 0;
-  if (this.size === "small") {
-    sizePrice = 5;
-  } else if (this.size === "medium") {
-    sizePrice = 6;
-  } else if (this.size === "large") {
-    sizePrice = 8;
-  } else if (this.size === "extra-large") {
-    sizePrice = 10;
-  }
+
   this.sizePrice = sizePrice;
 };
 
 Pizza.prototype.meatTopping = function(meatTopping) {
   var meatToppingPrice = 0;
   if (this.meatTopping === "pep") {
-    meatToppingPrice = 3;
+    meatToppingPrice = 2;
   } else if (this.meatTopping === "saus") {
-    meatToppingPrice = 4;
+    meatToppingPrice = 2;
   } else if (this.meatTopping === "ham") {
     meatToppingPrice = 2;
   } else if (this.meatTopping === "nomeat") {
@@ -76,11 +83,6 @@ Pizza.prototype.vegTopping3 = function(vegTopping3) {
     vegTopping3Price = 0;
   }
   this.vegTopping3Price = vegTopping3Price;
-};
-
-Pizza.prototype.price = function(price) {
-  var totalPrice = this.sizePrice + this.meatToppingPrice + this.vegTopping1Price + this.vegTopping2Price + this.vegTopping3Price;
-  price = this.price.push(totalPrice);
 };
 
 // User interface logic
