@@ -10,36 +10,11 @@ _This sample pizza delivery site is designed to replicate a site that one would 
 
 ### Specifications
 1. Create HTML layout with heading, order form, etc.  
-  * Input Example:
-  * Output Example:
-
 2. Create pizza object with size and topping properties
-  * Input Example: N/A
-  * Output Example: N/A
-
-3. Establish prototypes for size, toppings, and price
-  * Input Example: N/A
-  * Output Example: N/A
-
-4. 
-  * Input Example:
-  * Output Example:
-
-5.
-  * Input Example:
-  * Output Example:
-
-6.
-  * Input Example:
-  * Output Example:
-
-7.
-  * Input Example:
-  * Output Example:
-
-8.
-  * Input Example:
-  * Output Example:
+3. Establish price prototype
+4. Add if/then statements and forEach loop to price prototype
+5. Add front-end logic to pull values from object and prototype
+6. Add front-end logic to make values append and display correctly
 
 ## Setup/Installation Requirements
 
