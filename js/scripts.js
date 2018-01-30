@@ -1,11 +1,10 @@
 // Business logic
 function Pizza(size, toppings) {
   this.size = size;
-  this.toppings = [];
+  this.toppings = toppings;
 };
 
-Pizza.prototype.Price = function() {
-  var price = 0;
+Pizza.prototype.price = function(price) {
   if (this.size === "small") {
     price = 4;
   } else if (this.size === "medium") {
@@ -29,8 +28,9 @@ $(document).ready(function() {
     $("input:checkbox[name=toppings]:checked").each(function(){
       var pizzaToppings = $(this).val();
       var pizzaSize = $("#pizza-size").val();
-      $("span.total").append(pizzaToppings + pizzaSize);
+      $("span.total").text(pizzaToppings + pizzaSize);
     });
+    var order = new Pizza(size, toppings);
   $('#order-form').hide();
 });
 });
